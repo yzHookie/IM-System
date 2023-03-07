@@ -57,7 +57,7 @@ func (this *Server) Handler(conn net.Conn) {
 	//用户上线，将用户加入OnlineMap中
 	this.mapLock.Lock()
 	this.OnlineMap[user.Name] = user
-	this.mapLock.Unlo()ck()
+	this.mapLock.Unlock()
 
 	//广播当前用户上线信息
 	this.BroadCast(user, "已上线")
